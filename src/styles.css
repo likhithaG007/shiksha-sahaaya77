@@ -182,8 +182,6 @@
 
 @utility gov-panel-hover {
   transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
-}
-@utility gov-panel-hover {
   &:hover {
     border-color: color-mix(in oklab, var(--primary) 45%, transparent);
     box-shadow: var(--shadow-raised);
