@@ -152,3 +152,41 @@
   max-width: 76rem;
   padding-inline: 1rem;
 }
+
+@utility gov-tricolor {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    var(--saffron) 0 33.33%,
+    var(--card) 33.33% 66.66%,
+    var(--success) 66.66% 100%
+  );
+}
+
+@utility gov-hero {
+  background:
+    radial-gradient(circle at 12% 18%, color-mix(in oklab, var(--saffron) 22%, transparent) 0, transparent 42%),
+    radial-gradient(circle at 88% 12%, color-mix(in oklab, var(--success) 24%, transparent) 0, transparent 46%),
+    linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--primary-foreground);
+}
+
+@utility gov-panel {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+@utility gov-panel-hover {
+  transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+@utility gov-panel-hover {
+  &:hover {
+    border-color: color-mix(in oklab, var(--primary) 45%, transparent);
+    box-shadow: var(--shadow-raised);
+    transform: translateY(-2px);
+  }
+}
