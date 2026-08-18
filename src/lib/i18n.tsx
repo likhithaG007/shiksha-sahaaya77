@@ -5,7 +5,7 @@ export type Lang = "en" | "kn";
 type Dict = Record<string, { en: string; kn: string }>;
 
 export const dict: Dict = {
-  "site.name": { en: "School Samadhana", kn: "ಶಾಲಾ ಸಮಾಧಾನ" },
+  "site.name": { en: "Shiksha Sahaya", kn: "ಶಿಕ್ಷಾ ಸಹಾಯ" },
   "site.tagline": { en: "Government of Karnataka · School Grievance & Learning Portal", kn: "ಕರ್ನಾಟಕ ಸರ್ಕಾರ · ಶಾಲಾ ದೂರು ಮತ್ತು ಕಲಿಕಾ ಪೋರ್ಟಲ್" },
   "site.emblem": { en: "Satyameva Jayate", kn: "ಸತ್ಯಮೇವ ಜಯತೇ" },
 

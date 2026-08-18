@@ -81,12 +81,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "School Samadhana — School Grievance & Learning Portal" },
+      { title: "Shiksha Sahaya — School Grievance & Learning Portal" },
       {
         name: "description",
         content: "Bilingual Karnataka government school portal for grievance redressal and free digital learning.",
       },
-      { property: "og:title", content: "School Samadhana" },
+      { property: "og:title", content: "Shiksha Sahaya" },
       {
         property: "og:description",
         content: "Report school problems, track tickets and study free material — in Kannada and English.",

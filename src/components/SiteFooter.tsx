@@ -13,7 +13,7 @@ export function SiteFooter() {
           <h2 className="text-sm font-semibold">{t("footer.contact")}</h2>
           <ul className="mt-2 space-y-1 text-xs text-primary-foreground/75">
             <li>{t("footer.helpline")}: 1800-425-0000</li>
-            <li>samadhana@karnataka.gov.in</li>
+            <li>shikshasahaya@karnataka.gov.in</li>
             <li>Department of School Education, Bengaluru 560001</li>
           </ul>
         </div>

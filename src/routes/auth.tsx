@@ -10,9 +10,9 @@ import { Label } from "@/components/ui/label";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Login or Register — School Samadhana" },
+      { title: "Login or Register — Shiksha Sahaya" },
       { name: "description", content: "Secure login for students, parents and school officials of Karnataka government schools." },
-      { property: "og:title", content: "Login or Register — School Samadhana" },
+      { property: "og:title", content: "Login or Register — Shiksha Sahaya" },
       { property: "og:description", content: "Role-based access for students, parents and officials." },
     ],
   }),

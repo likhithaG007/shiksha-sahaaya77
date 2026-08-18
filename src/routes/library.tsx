@@ -10,9 +10,9 @@ import { Label } from "@/components/ui/label";
 export const Route = createFileRoute("/library")({
   head: () => ({
     meta: [
-      { title: "Digital Library — School Samadhana" },
+      { title: "Digital Library — Shiksha Sahaya" },
       { name: "description", content: "Free PDFs and videos for Karnataka government school students, organised by class, subject and topic." },
-      { property: "og:title", content: "Digital Library — School Samadhana" },
+      { property: "og:title", content: "Digital Library — Shiksha Sahaya" },
       { property: "og:description", content: "Searchable study material by class, subject and topic." },
     ],
   }),

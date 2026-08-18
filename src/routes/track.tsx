@@ -12,9 +12,9 @@ import { Label } from "@/components/ui/label";
 export const Route = createFileRoute("/track")({
   head: () => ({
     meta: [
-      { title: "Track Complaint Status — School Samadhana" },
+      { title: "Track Complaint Status — Shiksha Sahaya" },
       { name: "description", content: "Follow the live status timeline of every grievance you submitted, from Submitted to Under Review to Resolved." },
-      { property: "og:title", content: "Track Complaint Status — School Samadhana" },
+      { property: "og:title", content: "Track Complaint Status — Shiksha Sahaya" },
       { property: "og:description", content: "Search your ticket ID and see the official response." },
     ],
   }),

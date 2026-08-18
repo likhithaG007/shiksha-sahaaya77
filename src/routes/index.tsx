@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "School Samadhana — School Grievance & Learning Portal" },
+      { title: "Shiksha Sahaya — School Grievance & Learning Portal" },
       {
         name: "description",
         content:
           "Bilingual Karnataka government school portal: report school problems with ticket tracking, view attendance and results, and study free digital material.",
       },
-      { property: "og:title", content: "School Samadhana — School Grievance & Learning Portal" },
+      { property: "og:title", content: "Shiksha Sahaya — School Grievance & Learning Portal" },
       {
         property: "og:description",
         content: "Report school problems, track every ticket, and keep learning — in Kannada and English.",

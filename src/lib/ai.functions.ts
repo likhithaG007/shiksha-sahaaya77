@@ -21,7 +21,7 @@ export const askAssistant = createServerFn({ method: "POST" })
     if (!apiKey) return { ok: false as const, reply: "AI assistant is not configured." };
 
     const system =
-      "You are the School Samadhana learning assistant for Karnataka government school students (classes 1-10). " +
+      "You are the Shiksha Sahaya learning assistant for Karnataka government school students (classes 1-10). " +
       "Help only with academic doubts: homework, concepts, exam preparation, and study guidance. " +
       "Politely decline anything unrelated to learning. Keep answers short, simple and step-by-step. " +
       (data.lang === "kn"
