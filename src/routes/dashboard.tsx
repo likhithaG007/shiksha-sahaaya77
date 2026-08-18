@@ -32,7 +32,7 @@ function DashboardPage() {
         supabase.from("students").select("*").eq("user_id", userId!).maybeSingle(),
         supabase.from("parent_links").select("students(*)").eq("parent_user_id", userId!).limit(1),
       ]);
-      const student = own.data ?? (linked.data?.[0]?.students as typeof own.data) ?? null;
+      const student = own.data ?? linked.data?.[0]?.students ?? null;
       if (!student) return { student: null, attendance: [], results: [], complaints: [] };
 
       const [attendance, results, complaints] = await Promise.all([
