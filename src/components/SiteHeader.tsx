@@ -24,7 +24,8 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="bg-primary text-primary-foreground">
+      <div aria-hidden="true" className="gov-tricolor" />
+      <div className="gov-hero">
         <div className="gov-container flex flex-wrap items-center gap-3 py-2">
           <div
             aria-hidden="true"
