@@ -14,6 +14,7 @@ import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as LibraryRouteImport } from './routes/library'
+import { Route as OfficialsRouteImport } from './routes/officials'
 import { Route as SubmitRouteImport } from './routes/submit'
 import { Route as TrackRouteImport } from './routes/track'
 
@@ -42,6 +43,11 @@ const LibraryRoute = LibraryRouteImport.update({
   path: '/library',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OfficialsRoute = OfficialsRouteImport.update({
+  id: '/officials',
+  path: '/officials',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SubmitRoute = SubmitRouteImport.update({
   id: '/submit',
   path: '/submit',
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
   '/library': typeof LibraryRoute
+  '/officials': typeof OfficialsRoute
   '/submit': typeof SubmitRoute
   '/track': typeof TrackRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
   '/library': typeof LibraryRoute
+  '/officials': typeof OfficialsRoute
   '/submit': typeof SubmitRoute
   '/track': typeof TrackRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
   '/library': typeof LibraryRoute
+  '/officials': typeof OfficialsRoute
   '/submit': typeof SubmitRoute
   '/track': typeof TrackRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/dashboard'
     | '/library'
+    | '/officials'
     | '/submit'
     | '/track'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/dashboard'
     | '/library'
+    | '/officials'
     | '/submit'
     | '/track'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/dashboard'
     | '/library'
+    | '/officials'
     | '/submit'
     | '/track'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   DashboardRoute: typeof DashboardRoute
   LibraryRoute: typeof LibraryRoute
+  OfficialsRoute: typeof OfficialsRoute
   SubmitRoute: typeof SubmitRoute
   TrackRoute: typeof TrackRoute
 }
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/officials': {
+      id: '/officials'
+      path: '/officials'
+      fullPath: '/officials'
+      preLoaderRoute: typeof OfficialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/submit': {
       id: '/submit'
       path: '/submit'
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   DashboardRoute: DashboardRoute,
   LibraryRoute: LibraryRoute,
+  OfficialsRoute: OfficialsRoute,
   SubmitRoute: SubmitRoute,
   TrackRoute: TrackRoute,
 }
