@@ -20,7 +20,7 @@ export const Route = createFileRoute("/auth")({
 });
 
 function AuthPage() {
-  const { t } = useI18n();
+  const { t, lang, setLang } = useI18n();
   const navigate = useNavigate();
   const [mode, setMode] = useState<"login" | "register">("login");
   const [role, setRole] = useState<Role>("student");
@@ -59,7 +59,27 @@ function AuthPage() {
   }
 
   return (
-    <div className="gov-container max-w-xl py-12">
+    <div>
+      <div aria-hidden="true" className="gov-tricolor" />
+      <div className="gov-hero">
+        <div className="gov-container flex flex-wrap items-center gap-3 py-4">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-sm border border-primary-foreground/30 bg-primary-foreground/10 text-sm font-bold">
+            ಕ
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-base font-semibold">{t("site.name")}</p>
+            <p className="truncate text-xs text-primary-foreground/80">{t("site.tagline")}</p>
+          </div>
+          <div role="group" aria-label="Language" className="flex overflow-hidden rounded-sm border border-primary-foreground/30 text-xs">
+            <button type="button" onClick={() => setLang("en")} aria-pressed={lang === "en"}
+              className={`px-2 py-1 ${lang === "en" ? "bg-primary-foreground text-primary" : "hover:bg-primary-foreground/10"}`}>English</button>
+            <button type="button" onClick={() => setLang("kn")} aria-pressed={lang === "kn"}
+              className={`px-2 py-1 ${lang === "kn" ? "bg-primary-foreground text-primary" : "hover:bg-primary-foreground/10"}`}>ಕನ್ನಡ</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="gov-container max-w-xl py-12">
       <h1 className="text-2xl font-bold text-foreground">{t("auth.title")}</h1>
       <p className="mt-2 text-sm text-muted-foreground">{t("auth.note")}</p>
 
@@ -140,5 +160,6 @@ function AuthPage() {
         </Button>
       </form>
     </div>
+  </div>
   );
 }
