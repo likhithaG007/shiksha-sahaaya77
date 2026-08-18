@@ -12,9 +12,9 @@ type Msg = { role: "user" | "assistant"; content: string };
 export const Route = createFileRoute("/assistant")({
   head: () => ({
     meta: [
-      { title: "AI Learning Assistant — School Samadhana" },
+      { title: "AI Learning Assistant — Shiksha Sahaya" },
       { name: "description", content: "Bilingual homework and concept help for Karnataka government school students in Kannada and English." },
-      { property: "og:title", content: "AI Learning Assistant — School Samadhana" },
+      { property: "og:title", content: "AI Learning Assistant — Shiksha Sahaya" },
       { property: "og:description", content: "Ask academic doubts in Kannada or English and get simple step-by-step answers." },
     ],
   }),

@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Dashboard — School Samadhana" },
+      { title: "Dashboard — Shiksha Sahaya" },
       { name: "description", content: "Attendance, subject results and complaint status for students and their parents." },
-      { property: "og:title", content: "Dashboard — School Samadhana" },
+      { property: "og:title", content: "Dashboard — Shiksha Sahaya" },
       { property: "og:description", content: "Private attendance, results and grievance status, visible only after login." },
     ],
   }),

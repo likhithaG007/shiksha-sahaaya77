@@ -14,9 +14,9 @@ const STATUSES: ComplaintStatus[] = ["submitted", "under_review", "resolved"];
 export const Route = createFileRoute("/officials")({
   head: () => ({
     meta: [
-      { title: "Officials Panel — School Samadhana" },
+      { title: "Officials Panel — Shiksha Sahaya" },
       { name: "description", content: "Verified officials review, respond to and resolve school grievances with filters by status, category and school." },
-      { property: "og:title", content: "Officials Panel — School Samadhana" },
+      { property: "og:title", content: "Officials Panel — Shiksha Sahaya" },
       { property: "og:description", content: "Review and resolve submitted school grievances." },
     ],
   }),

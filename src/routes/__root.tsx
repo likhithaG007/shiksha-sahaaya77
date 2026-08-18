@@ -4,6 +4,8 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
+  useNavigate,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -12,9 +14,10 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LanguageProvider } from "@/lib/i18n";
-import { AuthProvider } from "@/lib/auth";
+import { AuthProvider, useAuth } from "@/lib/auth";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { useI18n } from "@/lib/i18n";
 
 function NotFoundComponent() {
   return (
@@ -81,12 +84,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "School Samadhana — School Grievance & Learning Portal" },
+      { title: "Shiksha Sahaya — School Grievance & Learning Portal" },
       {
         name: "description",
         content: "Bilingual Karnataka government school portal for grievance redressal and free digital learning.",
       },
-      { property: "og:title", content: "School Samadhana" },
+      { property: "og:title", content: "Shiksha Sahaya" },
       {
         property: "og:description",
         content: "Report school problems, track tickets and study free material — in Kannada and English.",
@@ -135,16 +138,55 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <AuthProvider>
-          <div className="flex min-h-screen flex-col bg-background">
-            <SiteHeader />
-            <main className="flex-1">
-              {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-              <Outlet />
-            </main>
-            <SiteFooter />
-          </div>
+          <AuthGate />
         </AuthProvider>
       </LanguageProvider>
     </QueryClientProvider>
+  );
+}
+
+function AuthGate() {
+  const { session, loading } = useAuth();
+  const { t } = useI18n();
+  const navigate = useNavigate();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isAuthRoute = pathname === "/auth";
+
+  useEffect(() => {
+    if (!loading && !session && !isAuthRoute) {
+      navigate({ to: "/auth", replace: true });
+    }
+  }, [loading, session, isAuthRoute, navigate]);
+
+  if (isAuthRoute) {
+    return (
+      <div className="flex min-h-screen flex-col bg-background">
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
+    );
+  }
+
+  if (loading || !session) {
+    return (
+      <div className="flex min-h-screen flex-col items-center justify-center gap-3 bg-background px-4 text-center">
+        <div className="size-8 animate-spin rounded-full border-2 border-border border-t-primary" aria-hidden="true" />
+        <p className="text-sm font-medium text-foreground">{loading ? t("gate.checking") : t("gate.title")}</p>
+        <p className="max-w-sm text-xs text-muted-foreground">{t("gate.sub")}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex min-h-screen flex-col bg-background">
+      <SiteHeader />
+      <main className="flex-1">
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </main>
+      <SiteFooter />
+    </div>
   );
 }

@@ -5,7 +5,7 @@ export type Lang = "en" | "kn";
 type Dict = Record<string, { en: string; kn: string }>;
 
 export const dict: Dict = {
-  "site.name": { en: "School Samadhana", kn: "ಶಾಲಾ ಸಮಾಧಾನ" },
+  "site.name": { en: "Shiksha Sahaya", kn: "ಶಿಕ್ಷಾ ಸಹಾಯ" },
   "site.tagline": { en: "Government of Karnataka · School Grievance & Learning Portal", kn: "ಕರ್ನಾಟಕ ಸರ್ಕಾರ · ಶಾಲಾ ದೂರು ಮತ್ತು ಕಲಿಕಾ ಪೋರ್ಟಲ್" },
   "site.emblem": { en: "Satyameva Jayate", kn: "ಸತ್ಯಮೇವ ಜಯತೇ" },
 
@@ -123,6 +123,17 @@ export const dict: Dict = {
   "lib.none": { en: "No material matches these filters.", kn: "ಈ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಯಾವುದೇ ಸಾಮಗ್ರಿ ಹೊಂದಿಕೆಯಾಗಲಿಲ್ಲ." },
   "lib.pdf": { en: "PDF", kn: "ಪಿಡಿಎಫ್" },
   "lib.video": { en: "Video", kn: "ವೀಡಿಯೊ" },
+  "lib.read": { en: "Read PDF", kn: "ಪಿಡಿಎಫ್ ಓದಿ" },
+  "lib.watch": { en: "Watch video", kn: "ವೀಡಿಯೊ ನೋಡಿ" },
+  "lib.newTab": { en: "Open in new tab", kn: "ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ" },
+  "lib.download": { en: "Download", kn: "ಡೌನ್‌ಲೋಡ್" },
+  "lib.close": { en: "Close", kn: "ಮುಚ್ಚಿ" },
+  "lib.viewerNote": { en: "If the document does not appear, use \"Open in new tab\".", kn: "ದಾಖಲೆ ಕಾಣದಿದ್ದರೆ \"ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ\" ಬಳಸಿ." },
+
+  "gate.title": { en: "Login required", kn: "ಲಾಗಿನ್ ಅಗತ್ಯವಿದೆ" },
+  "gate.sub": { en: "This portal is available to registered students, parents and officials only. Please login or create an account to continue.", kn: "ಈ ಪೋರ್ಟಲ್ ನೋಂದಾಯಿತ ವಿದ್ಯಾರ್ಥಿಗಳು, ಪೋಷಕರು ಮತ್ತು ಅಧಿಕಾರಿಗಳಿಗೆ ಮಾತ್ರ. ಮುಂದುವರಿಯಲು ಲಾಗಿನ್ ಮಾಡಿ ಅಥವಾ ಖಾತೆ ತೆರೆಯಿರಿ." },
+  "gate.checking": { en: "Checking your session…", kn: "ನಿಮ್ಮ ಸೆಷನ್ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…" },
+
 
   "ai.title": { en: "AI Learning Assistant", kn: "AI ಕಲಿಕಾ ಸಹಾಯಕ" },
   "ai.sub": { en: "Ask homework and concept doubts in Kannada or English.", kn: "ಕನ್ನಡ ಅಥವಾ ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ಮನೆಕೆಲಸ ಮತ್ತು ಪರಿಕಲ್ಪನೆಯ ಸಂದೇಹಗಳನ್ನು ಕೇಳಿ." },

@@ -14,9 +14,9 @@ const CATEGORIES = ["infrastructure", "teacher", "safety", "meal", "other"] as c
 export const Route = createFileRoute("/submit")({
   head: () => ({
     meta: [
-      { title: "Submit a School Problem — School Samadhana" },
+      { title: "Submit a School Problem — Shiksha Sahaya" },
       { name: "description", content: "Report infrastructure, teacher shortage, safety or mid-day meal problems and receive a trackable ticket ID." },
-      { property: "og:title", content: "Submit a School Problem — School Samadhana" },
+      { property: "og:title", content: "Submit a School Problem — Shiksha Sahaya" },
       { property: "og:description", content: "Step-by-step grievance form with an instant ticket ID." },
     ],
   }),
