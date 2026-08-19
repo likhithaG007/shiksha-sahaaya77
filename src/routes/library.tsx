@@ -24,7 +24,9 @@ type LibraryItem = {
   class_level: number;
   media_type: string;
   url: string;
+  content: string;
 };
+
 
 export const Route = createFileRoute("/library")({
   head: () => ({
