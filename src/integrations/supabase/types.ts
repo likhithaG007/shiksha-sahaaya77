@@ -134,6 +134,7 @@ export type Database = {
       library_items: {
         Row: {
           class_level: number
+          content: string
           created_at: string
           description: string
           id: string
@@ -146,6 +147,7 @@ export type Database = {
         }
         Insert: {
           class_level: number
+          content?: string
           created_at?: string
           description?: string
           id?: string
@@ -158,6 +160,7 @@ export type Database = {
         }
         Update: {
           class_level?: number
+          content?: string
           created_at?: string
           description?: string
           id?: string
@@ -201,16 +204,19 @@ export type Database = {
           created_at: string
           full_name: string
           id: string
+          phone: string
         }
         Insert: {
           created_at?: string
           full_name?: string
           id: string
+          phone?: string
         }
         Update: {
           created_at?: string
           full_name?: string
           id?: string
+          phone?: string
         }
         Relationships: []
       }
