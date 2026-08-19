@@ -56,6 +56,17 @@ export const dict: Dict = {
   "auth.note": { en: "Student attendance and results are never shown without login.", kn: "ಲಾಗಿನ್ ಇಲ್ಲದೆ ವಿದ್ಯಾರ್ಥಿ ಹಾಜರಾತಿ ಮತ್ತು ಫಲಿತಾಂಶಗಳನ್ನು ಎಂದಿಗೂ ತೋರಿಸಲಾಗುವುದಿಲ್ಲ." },
   "auth.needLogin": { en: "Please login to view this page.", kn: "ಈ ಪುಟವನ್ನು ನೋಡಲು ದಯವಿಟ್ಟು ಲಾಗಿನ್ ಆಗಿ." },
   "auth.goLogin": { en: "Go to login", kn: "ಲಾಗಿನ್‌ಗೆ ಹೋಗಿ" },
+  "auth.regno": { en: "Register number", kn: "ನೋಂದಣಿ ಸಂಖ್ಯೆ" },
+  "auth.regno.help": { en: "Officials: use your staff ID as the register number.", kn: "ಅಧಿಕಾರಿಗಳು: ನಿಮ್ಮ ಸಿಬ್ಬಂದಿ ಐಡಿಯನ್ನು ನೋಂದಣಿ ಸಂಖ್ಯೆಯಾಗಿ ಬಳಸಿ." },
+  "auth.phone": { en: "Mobile number", kn: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ" },
+  "auth.phone.help": { en: "10-digit mobile number used for school contact.", kn: "ಶಾಲಾ ಸಂಪರ್ಕಕ್ಕಾಗಿ 10 ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ." },
+  "auth.dob": { en: "Date of birth (this is your password)", kn: "ಜನ್ಮ ದಿನಾಂಕ (ಇದೇ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್)" },
+  "auth.dob.help": { en: "Login with your register number and your date of birth.", kn: "ನಿಮ್ಮ ನೋಂದಣಿ ಸಂಖ್ಯೆ ಮತ್ತು ಜನ್ಮ ದಿನಾಂಕದೊಂದಿಗೆ ಲಾಗಿನ್ ಆಗಿ." },
+  "auth.class": { en: "Class", kn: "ತರಗತಿ" },
+  "auth.school": { en: "School name", kn: "ಶಾಲೆಯ ಹೆಸರು" },
+  "auth.badCreds": { en: "Register number or date of birth is incorrect. If you are new, please register first.", kn: "ನೋಂದಣಿ ಸಂಖ್ಯೆ ಅಥವಾ ಜನ್ಮ ದಿನಾಂಕ ತಪ್ಪಾಗಿದೆ. ಹೊಸಬರಾಗಿದ್ದರೆ ಮೊದಲು ನೋಂದಾಯಿಸಿ." },
+  "auth.exists": { en: "This register number is already registered. Please login instead.", kn: "ಈ ನೋಂದಣಿ ಸಂಖ್ಯೆ ಈಗಾಗಲೇ ನೋಂದಾಯಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಲಾಗಿನ್ ಆಗಿ." },
+
 
   "dash.student": { en: "Student Dashboard", kn: "ವಿದ್ಯಾರ್ಥಿ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್" },
   "dash.parent": { en: "Parent Dashboard", kn: "ಪೋಷಕರ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್" },
@@ -128,6 +139,9 @@ export const dict: Dict = {
   "lib.newTab": { en: "Open in new tab", kn: "ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ" },
   "lib.download": { en: "Download", kn: "ಡೌನ್‌ಲೋಡ್" },
   "lib.close": { en: "Close", kn: "ಮುಚ್ಚಿ" },
+  "lib.lesson": { en: "Lesson notes", kn: "ಪಾಠದ ಟಿಪ್ಪಣಿಗಳು" },
+  "lib.original": { en: "Original document / video", kn: "ಮೂಲ ದಾಖಲೆ / ವೀಡಿಯೊ" },
+
   "lib.viewerNote": { en: "If the document does not appear, use \"Open in new tab\".", kn: "ದಾಖಲೆ ಕಾಣದಿದ್ದರೆ \"ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ\" ಬಳಸಿ." },
 
   "gate.title": { en: "Login required", kn: "ಲಾಗಿನ್ ಅಗತ್ಯವಿದೆ" },
