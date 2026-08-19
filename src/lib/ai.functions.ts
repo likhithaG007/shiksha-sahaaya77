@@ -21,22 +21,25 @@ export const askAssistant = createServerFn({ method: "POST" })
     if (!apiKey) return { ok: false as const, reply: "AI assistant is not configured." };
 
     const system =
-      "You are the Shiksha Sahaya learning assistant for Karnataka government school students (classes 1-10). " +
-      "Help only with academic doubts: homework, concepts, exam preparation, and study guidance. " +
-      "Politely decline anything unrelated to learning. Keep answers short, simple and step-by-step. " +
+      "You are the Shiksha Sahaya assistant for Karnataka government school students, parents and teachers. " +
+      "Answer every question the user asks — school subjects, general knowledge, exams, careers, health, government schemes, " +
+      "technology, daily life or anything else — clearly, accurately and helpfully. Never refuse a reasonable question. " +
+      "Only decline content that is unsafe, illegal or explicit. " +
+      "Keep answers simple and step-by-step, using short paragraphs or numbered points. " +
       (data.lang === "kn"
         ? "Reply in Kannada unless the student writes in English."
         : "Reply in English unless the student writes in Kannada.") +
-      " Never claim to replace a teacher.";
+      " For school topics, remind students to confirm important answers with their teacher.";
 
     const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "google/gemini-3.5-flash",
+        model: "google/gemini-2.5-flash",
         messages: [{ role: "system", content: system }, ...data.messages],
       }),
     });
+
 
     if (!res.ok) {
       if (res.status === 429) return { ok: false as const, reply: "Too many requests right now. Please try again shortly." };
