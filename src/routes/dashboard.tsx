@@ -80,6 +80,20 @@ function DashboardPage() {
     ? Math.round(data.results.reduce((s, r) => s + (r.marks / r.max_marks) * 100, 0) / data.results.length)
     : 0;
 
+  // One bar per subject: average the percentage across all terms.
+  const subjectTotals = new Map<string, { sum: number; count: number }>();
+  for (const r of data.results) {
+    const pct = (r.marks / r.max_marks) * 100;
+    const entry = subjectTotals.get(r.subject) ?? { sum: 0, count: 0 };
+    entry.sum += pct;
+    entry.count += 1;
+    subjectTotals.set(r.subject, entry);
+  }
+  const subjectMarks = [...subjectTotals.entries()].map(([subject, v]) => ({
+    subject,
+    marks: Math.round(v.sum / v.count),
+  }));
+
   return (
     <div className="gov-container space-y-8 py-10">
       <header>
