@@ -157,6 +157,23 @@ function LibraryPage() {
           </DialogHeader>
           {active && (
             <>
+              {active.content?.trim() && (
+                <section className="max-h-[45vh] overflow-y-auto rounded-md border border-border bg-background p-4">
+                  <h3 className="text-sm font-semibold text-foreground">{t("lib.lesson")}</h3>
+                  <div className="mt-2 space-y-3">
+                    {active.content
+                      .split(/\n{2,}/)
+                      .map((para) => para.trim())
+                      .filter(Boolean)
+                      .map((para, i) => (
+                        <p key={i} className="whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
+                          {para}
+                        </p>
+                      ))}
+                  </div>
+                </section>
+              )}
+              <h3 className="text-sm font-semibold text-foreground">{t("lib.original")}</h3>
               <div className="aspect-[4/3] w-full overflow-hidden rounded-md border border-border bg-muted sm:aspect-video">
                 <iframe
                   key={active.id}
@@ -168,6 +185,7 @@ function LibraryPage() {
                 />
               </div>
               <p className="text-xs text-muted-foreground">{t("lib.viewerNote")}</p>
+
               <div className="flex flex-wrap gap-2">
                 <Button asChild size="sm" variant="outline">
                   <a href={active.url} target="_blank" rel="noopener noreferrer">
