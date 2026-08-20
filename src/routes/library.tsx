@@ -148,7 +148,7 @@ function LibraryPage() {
       )}
 
       <Dialog open={active !== null} onOpenChange={(open) => !open && setActive(null)}>
-        <DialogContent className="max-w-4xl">
+        <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{active?.title}</DialogTitle>
             <DialogDescription>
