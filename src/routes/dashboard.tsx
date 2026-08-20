@@ -112,7 +112,7 @@ function DashboardPage() {
       <div className="grid gap-4 sm:grid-cols-3">
         <StatCard label={t("dash.attendance")} value={`${attendancePct}%`} sub={t("dash.attendance.sub")} />
         <StatCard label={t("dash.average")} value={`${avgMarks}%`} sub={t("dash.results")} />
-        <StatCard label={t("dash.subjects")} value={String(data.results.length)} sub={t("dash.results")} />
+        <StatCard label={t("dash.subjects")} value={String(subjectMarks.length)} sub={t("dash.results")} />
       </div>
 
       <section className="grid gap-6 lg:grid-cols-2">
@@ -120,7 +120,7 @@ function DashboardPage() {
           <h2 className="text-base font-semibold text-foreground">{t("dash.results")}</h2>
           <div className="mt-4 h-64">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={data.results.map((r) => ({ subject: r.subject, marks: Math.round((r.marks / r.max_marks) * 100) }))}>
+              <BarChart data={subjectMarks}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="subject" fontSize={12} />
                 <YAxis domain={[0, 100]} fontSize={12} />
