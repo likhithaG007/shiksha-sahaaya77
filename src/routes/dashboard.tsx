@@ -80,6 +80,18 @@ function DashboardPage() {
     ? Math.round(data.results.reduce((s, r) => s + (r.marks / r.max_marks) * 100, 0) / data.results.length)
     : 0;
 
+  // One bar per subject: average the percentage across all terms so subjects don't repeat.
+  const subjectTotals = new Map<string, { sum: number; count: number }>();
+  for (const r of data.results) {
+    const entry = subjectTotals.get(r.subject) ?? { sum: 0, count: 0 };
+    entry.sum += (r.marks / r.max_marks) * 100;
+    entry.count += 1;
+    subjectTotals.set(r.subject, entry);
+  }
+  const subjectMarks = [...subjectTotals.entries()]
+    .map(([subject, v]) => ({ subject, marks: Math.round(v.sum / v.count) }))
+    .sort((a, b) => a.subject.localeCompare(b.subject));
+
   return (
     <div className="gov-container space-y-8 py-10">
       <header>
@@ -98,7 +110,7 @@ function DashboardPage() {
       <div className="grid gap-4 sm:grid-cols-3">
         <StatCard label={t("dash.attendance")} value={`${attendancePct}%`} sub={t("dash.attendance.sub")} />
         <StatCard label={t("dash.average")} value={`${avgMarks}%`} sub={t("dash.results")} />
-        <StatCard label={t("dash.subjects")} value={String(data.results.length)} sub={t("dash.results")} />
+        <StatCard label={t("dash.subjects")} value={String(subjectMarks.length)} sub={t("dash.results")} />
       </div>
 
       <section className="grid gap-6 lg:grid-cols-2">
@@ -106,7 +118,7 @@ function DashboardPage() {
           <h2 className="text-base font-semibold text-foreground">{t("dash.results")}</h2>
           <div className="mt-4 h-64">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={data.results.map((r) => ({ subject: r.subject, marks: Math.round((r.marks / r.max_marks) * 100) }))}>
+              <BarChart data={subjectMarks}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="subject" fontSize={12} />
                 <YAxis domain={[0, 100]} fontSize={12} />
