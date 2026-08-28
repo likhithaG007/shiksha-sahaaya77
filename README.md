@@ -1,126 +1,168 @@
-# Shiksha Sahaya
+# 📚 Shikshana Sahaya
 
-. Concept Summary
+<p align="center">
+  <img src="https://img.shields.io/badge/Education-Support%20Platform-4F46E5?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AI%20Powered-Student%20Project-7C3AED?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Status-Completed-6D28D9?style=for-the-badge"/>
+</p>
 
-A bilingual (Kannada + English) public portal that connects students, parents, and government school officials. Core purpose: give people suffering from poor school facilities a real channel to report problems and get resolutions, while also giving students a free digital learning space.
+<p align="center">
+  <strong>Empowering Government School Students Through Accessible Digital Education.</strong>
+</p>
 
-Core modules
+<p align="center">
+  <a href="https://shiksha-sahaya.lovable.app">
+    <img src="https://img.shields.io/badge/🌐%20Live%20Demo-Shikshana%20Sahaya-7C3AED?style=for-the-badge"/>
+  </a>
+</p>
 
-Landing/Home page (public info + trust-building)
+---
 
-Login/Register (Student / Parent / Official — role-based access)
+## 🌟 About the Project
 
-Student Dashboard (attendance, results, progress, assigned complaints status)
+**Shikshana Sahaya** is an educational support platform designed to help **government school students** overcome learning challenges by providing an accessible and student-friendly digital learning experience.
 
-Parent Dashboard (view child's attendance/results/progress, submit complaints)
+The project focuses on making educational resources easier to access while encouraging students to continue learning through technology.
 
-Problem/Grievance Submission + Tracking (ticket-style, with status: Submitted → Under Review → Resolved)
+Developed as a student project using AI-assisted development tools, Shikshana Sahaya demonstrates how technology can be used to improve educational accessibility.
 
-Officials Panel (view, respond to, and resolve complaints; escalate if needed)
+---
 
-Digital Library (subject-wise PDFs & videos, searchable, topic-tagged)
+## 🎯 Project Objective
 
-AI Assistant (doubt-solving chatbot, bilingual, subject-aware)
+The primary goal of **Shikshana Sahaya** is to bridge learning gaps for government school students by providing a simple, accessible, and supportive educational platform.
 
-Language toggle (ಕನ್ನಡ / English) — site-wide, not just a homepage widget
+The platform aims to:
 
-2. Visual Theme — "Trustworthy Government + Approachable Learning"
+* Support students facing educational difficulties.
+* Encourage digital learning.
+* Improve accessibility to educational resources.
+* Explore AI-assisted web development for education.
 
-Real Indian government portals (UDISE+, DIKSHA, Karnataka's own seva.karnataka.gov.in style sites) share a visual language: restrained color, clear hierarchy, an emblem/header bar, and high information density without clutter. You want that credibility, but softened slightly since students will spend time here.
+---
 
-Color Palette
+## ✨ Key Features
 
-RoleColorHexUsePrimary (Header/Nav)Navy Blue#0B3D66Header bar, nav, primary buttonsSecondarySaffron/Orange#F4941ECTAs, highlights, "Submit Problem" buttonAccent (Trust/Growth)Deep Green#1E7B45Success states, "Resolved" tags, library iconsBackgroundOff-white#F7F8FAPage background (not pure white — easier on eyes)SurfaceWhite#FFFFFFCards, panelsText PrimaryCharcoal#1F2937Body textText MutedSlate Gray#6B7280Captions, metadataAlert/PendingAmber#D97706"Under Review" statusErrorRed#B91C1CForm errors only, use sparingly
+* 📖 Student-friendly educational platform.
+* 🎓 Designed for government school students.
+* 🌐 Easy-to-use web interface.
+* 💻 AI-assisted website development.
+* 📚 Educational resource support.
+* 🤝 Technology-driven learning experience.
 
-This is essentially an Ashoka-chakra-adjacent tricolor cue (navy, saffron, green) without being literal or flag-like — it reads as "official India" without looking like a political banner.
+---
 
-Typography
+## 🛠️ Tech Stack
 
-English: Noto Sans or Inter — clean, highly legible, used by many .gov.in sites.
+| Technology             | Purpose                                        |
+| ---------------------- | ---------------------------------------------- |
+| **Lovable**            | Website development and deployment             |
+| **Claude AI**          | AI-assisted development and content generation |
+| **GitHub**             | Version control and project management         |
+| **Prompt Engineering** | AI prompt creation and refinement              |
 
-Kannada: Noto Sans Kannada — pairs naturally with Noto Sans, same x-height rhythm, free and Google-hosted, renders reliably across devices.
+---
 
-Headings: Noto Sans SemiBold/Bold, slightly larger than body (1.4–1.6 ratio scale).
+## 🚀 My Contribution
 
-Avoid: decorative/script fonts, anything with low Kannada glyph support (many "modern" Google Fonts don't support Kannada — always verify before picking).
+I contributed to the development of **Shikshana Sahaya** as part of the project team.
 
-Layout & Feel
+### Responsibilities
 
-Top bar: emblem/logo + "Government of Karnataka" style tag line + language toggle + login.
+* Developed website components.
+* Contributed to overall project development.
+* Used AI-assisted tools during development.
+* Managed project code using GitHub.
 
-Sticky nav below: Home | Dashboard | Digital Library | AI Assistant | Submit Problem | Track Status.
+---
 
-Card-based dashboard (not dense tables) for students/parents — large legible numbers for attendance %, grade trends as simple bar/line charts.
+## 🌐 Live Demo
 
-Grievance form: short, numbered steps (School → Category → Description → Optional photo → Submit), with a visible ticket ID on submission — mirrors how real grievance portals (e.g., CPGRAMS) build trust through traceability.
+<p align="center">
+  <a href="https://shiksha-sahaya.lovable.app">
+    <img src="https://img.shields.io/badge/Visit%20Live%20Website-4F46E5?style=for-the-badge&logo=googlechrome&logoColor=white"/>
+  </a>
+</p>
 
-Footer: contact/helpline info, RTI/accessibility links, disclaimer — standard on gov sites and reassures users this is a "real" channel, not a form that vanishes.
+**Live Website:** https://shiksha-sahaya.lovable.app
 
-Rounded corners (6–8px, not 20px — stay formal), soft shadows, generous whitespace. Avoid gradients, neon colors, or playful illustration styles that undercut authority.
+---
 
-3. Key Functional Notes (things to get right)
+## 📂 Project Structure
 
-Role-based auth: three roles (student, parent, official) with different dashboard views. Parent accounts should be linked to a student ID/roll number, not just free-standing.
-
-Password-gated student data: attendance/results should never be visible without login — make this explicit in the prompt below so the AI doesn't build an open data view.
-
-Problem tracking: every submission gets a ticket ID + status timeline, visible to the submitter and to officials. This is the single most important trust feature — people need to see that their complaint didn't disappear.
-
-Digital Library: organize by Class → Subject → Topic, not a flat file list. Each PDF/video entry should show title, subject, class, and a short description so search/filter actually works.
-
-AI Assistant: scope it to homework/concept help, bilingual by default, and give it a visible disclaimer that it supports learning but doesn't replace teachers.
-
-Language toggle: build it as a global state (not per-page translation), so switching once switches the whole site including dashboard labels and form fields.
-
-4. Ready-to-Use Prompt (for an AI site builder / Claude / v0 / Lovable etc.)
-
-Copy-paste this as your build prompt:
-
-Build a bilingual (Kannada and English, with a toggle) government school portal web app called "School Samadhana" (or similar — a portal name meaning "school solutions"). It must look like a real, professional Indian government website — formal, trustworthy, high information density, not playful or startup-like.
-
-Visual style: Navy blue (#0B3D66) header/nav, saffron orange (#F4941E) for primary CTAs, deep green (#1E7B45) for success/resolved states, off-white (#F7F8FA) background, white card surfaces, charcoal (#1F2937) body text. Use Noto Sans for English and Noto Sans Kannada for Kannada text, matched heading/body scale. Rounded corners of 6-8px, soft shadows, generous whitespace, no gradients or neon colors. Include a top government-style bar with an emblem placeholder, a tagline, language toggle, and login button, plus a sticky nav below it.
-
-Roles & auth: Three login roles — Student, Parent, Official — each with a distinct password-protected dashboard. Parent accounts link to a student's roll number to view that child's data only.
-
-Pages/features to build:
-
-Home page — hero explaining the portal's purpose, quick links to Submit Problem, Digital Library, and AI Assistant, plus a "how it works" section (Submit → Track → Resolve).
-
-Login/Register — role selector, Kannada/English labels.
-
-Student Dashboard — attendance %, subject-wise results/grades (simple bar chart), progress over time (line chart), and a list of the student's own submitted complaints with status.
-
-Parent Dashboard — same data as student dashboard for their linked child, plus a "Submit Problem on behalf of student" button.
-
-Problem Submission form — step-based: School name → Category (infrastructure, teacher shortage, safety, mid-day meal, other) → Description → Optional photo upload → Submit. On submit, generate a ticket ID and show a status timeline (Submitted → Under Review → Resolved).
-
-Officials Panel — table of all submitted complaints with filters (status, category, school), ability to change status and add a response/resolution note visible to the submitter.
-
-Digital Library — organized by Class → Subject → Topic, with searchable/filterable cards for PDFs and videos; clicking a card opens the actual file/video in an embedded viewer, and shows a short description of the topic it covers.
-
-AI Assistant — a chat-style doubt-solving assistant for students, bilingual, scoped to academic help, with a visible note that it supports but doesn't replace teachers.
-
-Technical requirements: Fully responsive (mobile-first, since many users will be on phones). All student/parent data must be behind authentication — no data visible without login. Language toggle must switch all UI text and labels site-wide, not just the homepage. Use accessible, semantic HTML with proper contrast ratios (WCAG AA minimum) since this serves a broad public audience including low-literacy and low-bandwidth users — keep pages lightweight.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://shiksha-sahaya.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e8d084ac-473e-44a6-9e66-44d9add5cc97).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+```bash
+Shikshana-Sahaya/
+│── src/
+│── public/
+│── components/
+│── assets/
+│── package.json
+│── README.md
 ```
+
+---
+
+## 📚 Project Highlights
+
+| Category                 | Details                       |
+| ------------------------ | ----------------------------- |
+| **Project Type**         | Educational Support Website   |
+| **Domain**               | Education Technology (EdTech) |
+| **Target Users**         | Government School Students    |
+| **Development Platform** | Lovable                       |
+| **Version Control**      | GitHub                        |
+| **Project Status**       | ✅ Completed                   |
+
+---
+
+## 💡 Problem Statement
+
+Many government school students face challenges in accessing quality educational support and digital learning resources.
+
+**Shikshana Sahaya** was created to explore how technology can provide a simple and accessible platform that supports students in their learning journey.
+
+---
+
+## 🔮 Future Improvements
+
+Planned future enhancements include:
+
+* Personalized learning recommendations.
+* AI-assisted study support.
+* Interactive quizzes and assessments.
+* Progress tracking dashboard.
+* Multilingual educational content.
+* Improved accessibility features.
+
+---
+
+## 👩‍💻 Developer
+
+**Likhitha G**
+
+B.E. Computer Science & Engineering (AI & ML)
+
+RNS Institute of Technology, Bengaluru
+
+### Connect with me
+
+<p align="left">
+  <a href="https://github.com/likhithaG007">
+    <img src="https://img.shields.io/badge/GitHub-likhithaG007-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  <a href="https://www.linkedin.com/in/likhitha-g-424583429">
+    <img src="https://img.shields.io/badge/LinkedIn-Likhitha%20G-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+</p>
+
+---
+
+## 📌 Disclaimer
+
+This project was developed for educational purposes as part of a student learning initiative. It is intended to demonstrate the application of AI-assisted web development in the education domain.
+
+---
+
+<p align="center">
+  <strong>Building technology that supports learning, accessibility, and opportunity.</strong>
+</p>
